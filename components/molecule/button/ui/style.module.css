@@ -1,0 +1,15 @@
+.medium, .large {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: var(--spacing-4);
+	border-radius: var(--radius-8);
+}
+
+.medium {padding: var(--spacing-10);}
+
+.large {padding: var(--spacing-14);}
+
+.grey {background-color: var(--fill-alternative);}
+
+.brand {background-color: var(--brand-default)}

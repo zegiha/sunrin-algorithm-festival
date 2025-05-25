@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@material-symbols/font-300": "^0.31.3",
     "classnames": "^2.5.1",
     "motion": "^12.12.2",
     "next": "15.3.2",
