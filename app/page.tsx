@@ -1,95 +1,59 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client'
+
+import Row from "@/components/atom/flex/ui/Row";
+import Col from "@/components/atom/flex/ui/Col";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div>
+      <Row
+        width={'fill'}
+        justifyContent={'center'}
+        alignItems={'center'}
+        gap={24}
+        style={{backgroundColor: 'red', height: 400}}
+      >
+        <Col width={'hug'} gap={12}>
+          <Row
+            width={64}
+            style={{height: 64, backgroundColor: 'blue'}}
+            motion={{
+              initial: {
+                opacity: 0,
+                y: -100,
+              },
+              animate: {
+                opacity: 1,
+                y: 0,
+              },
+              transition: {
+                duration: 0.64,
+              }
+            }}
+          />
+          <Row
+            width={64}
+            style={{height: 64, backgroundColor: 'green'}}
+            motion={{
+              initial: {
+                opacity: 0,
+                x: -100,
+              },
+              animate: {
+                opacity: 1,
+                x: 0,
+              },
+              transition: {
+                duration: 0.64,
+              }
+            }}
+          >
+            <Row width={'fill'} style={{height: '50%', backgroundColor: 'yellow'}} onClick={() => alert('우예 찾았노 ㅋㅋ')}>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+            </Row>
+          </Row>
+        </Col>
+      </Row>
     </div>
   );
 }
