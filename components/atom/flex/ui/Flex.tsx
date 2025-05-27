@@ -1,6 +1,6 @@
 import IFlex from "@/components/atom/flex/const/IFlex";
-import MotionFlex from "@/components/atom/flex/ui/MotionFlex";
 import {getStyle} from "@/components/atom/flex/helper/flexPropertiesHelper";
+import {motion} from 'framer-motion'
 
 export default function Flex(props: IFlex) {
   const style = getStyle({...props, width: props.width ?? 'fill'})
@@ -15,8 +15,13 @@ export default function Flex(props: IFlex) {
       {props.children}
     </div>
   else
-    return <MotionFlex
-      {...props}
-      motion={props.motion}
-    />
+    return <motion.div
+      ref={props.ref}
+      className={props.className}
+      style={style}
+      onClick={props.onClick}
+      {...props.motion}
+    >
+      {props.children}
+    </motion.div>
 }

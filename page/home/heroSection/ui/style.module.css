@@ -1,0 +1,43 @@
+.heroSection {
+  position: relative;
+
+  height: 100vh;
+
+  z-index: 0;
+  background-color: var(--common-100);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url('/images/heroImage.png');
+}
+.heroSection::after {
+  z-index: 1;
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.heroSection > * {
+  z-index: 2;
+}
+
+.letterAnimationGroup {
+  position: relative;
+}
+.subText {
+  position: absolute;
+  bottom: -32px;
+  right: -20px;
+}
+
+.moreInfoButton {
+  border-radius: var(--radius-4);
+  position: absolute;
+  bottom: 56px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px;
+  background-color: transparent;
+  cursor: pointer;
+}

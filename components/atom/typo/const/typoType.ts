@@ -1,10 +1,7 @@
 type typoType =
-  'Display' |
-  'Title' |
   'Headline' |
   'Body' |
   'Label' |
-  'Footnote' |
-  'Caption'
+  'Footnote'
 
 export default typoType

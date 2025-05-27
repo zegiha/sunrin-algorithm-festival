@@ -1,0 +1,49 @@
+
+.imageGroupContainer {
+  --imageGap: 32px;
+  overflow-y: hidden;
+  gap: var(--imageGap);
+  @media(max-width: 440px) {
+    gap: var(--imageGap);
+  }
+}
+
+.imageGroupWrapper {
+  gap: inherit;
+}
+
+.imageWrapper {
+  position: relative;
+  aspect-ratio: 3.42/2;
+  height: 388px;
+  @media(max-width: 1100px) {height: 320px;}
+  @media(max-width: 720px) {height: 198px;}
+}
+
+.imageText {
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.rolling1 {
+  animation: rolling1 linear 64s infinite;
+}
+@keyframes rolling1 {
+  0% {transform: translateX(calc(var(--imageGap)));}
+  50% {transform: translateX(calc(100% + var(--imageGap)));}
+  50.1% {transform: translateX(calc(-100% - var(--imageGap)));}
+  100% {transform: translateX(calc(var(--imageGap)));}
+}
+
+.rolling2 {
+  animation: rolling2 linear 64s infinite;
+}
+@keyframes rolling2 {
+  0% {transform: translateX(calc(-200% - var(--imageGap)))}
+  50% {transform: translateX(calc(-100% - var(--imageGap)))}
+  99.9% {transform: translateX(var(--imageGap))}
+  100% {transform: translateX(calc(-200% - var(--imageGap)))}
+}
