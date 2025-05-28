@@ -12,6 +12,7 @@ export default interface IBaseTypo {
   className?: string
   width?: TWidth
   textAlign?: 'start' | 'center',
+  whiteSpace?: 'pre-wrap' | 'nowrap',
   wordBreak?: 'keep-all' | 'word-break'
   children: ReactNode
 }

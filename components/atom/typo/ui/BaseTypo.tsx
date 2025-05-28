@@ -19,6 +19,7 @@ export default function BaseTypo({
   width='fill',
   children,
   textAlign='start',
+  whiteSpace='pre-wrap',
   wordBreak,
 }: IBaseTypo) {
   return createElement(
@@ -36,7 +37,7 @@ export default function BaseTypo({
         letterSpacing: getLetterSpacing(type, isParagraph),
         fontWeight: getFontWeight(weight),
         width: getWidth(width),
-        whiteSpace: 'pre-wrap',
+        whiteSpace: whiteSpace,
         transition: 'all 0.24s ease-in-out',
         wordBreak,
         textAlign,

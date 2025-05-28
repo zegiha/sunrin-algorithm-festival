@@ -1,0 +1,49 @@
+.desktopContainer {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  gap: 24px;
+  width: 274px;
+  padding: var(--spacing-16);
+  border-radius: var(--radius-10);
+  background-color: var(--background-elevated-default);
+  @media(max-width: calc(1100px - 1px)) {
+    display: none;
+  }
+}
+
+.inputContainer {
+  padding: var(--spacing-10) var(--spacing-14);
+  border-radius: var(--radius-8);
+  background-color: var(--fill-alternative);
+}
+
+.button {
+  padding: var(--spacing-10);
+  border-radius: var(--radius-8);
+  background-color: var(--brand-default);
+}
+
+.greyContainer, .brandContainer {
+  padding: var(--spacing-24) var(--spacing-16);
+  border-radius: var(--radius-8);
+  @media(max-width: 720px) {
+    padding: var(--spacing-24);
+  }
+}
+
+.greyContainer{background-color: var(--fill-alternative)}
+.greyContainer>p{word-break: keep-all;}
+
+.brandContainer{background-color: var(--brand-default)}
+
+.firstBoxOthers {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  @media(max-width: calc(1100px - 1px)) {
+    display: flex;
+  }
+}

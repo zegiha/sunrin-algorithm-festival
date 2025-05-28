@@ -30,6 +30,7 @@ export default function BaseButton({
     >
       {leadIcon && <Icon
           iconKey={leadIcon}
+          fill
           size={size === 'medium' ? 20 : 24}
           color={getTextColor(type)}
       />}
