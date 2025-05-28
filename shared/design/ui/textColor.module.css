@@ -1,0 +1,11 @@
+.brand-default {color: var(--brand-default);}
+
+.contents-default {color: var(--contents-default);}
+
+.contents-alternative {color: var(--contents-alternative);}
+
+.contents-disabled {color: var(--contents-disable);}
+
+.contents-static-white {color: var(--contents-static-white);}
+
+.contents-static-black {color: var(--contents-static-black);}

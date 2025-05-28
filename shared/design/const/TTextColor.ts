@@ -2,7 +2,7 @@ type TTextColor =
   'brand-default' |
   'contents-default' |
   'contents-alternative' |
-  'contents-disabled' |
+  'contents-disable' |
   'contents-static-white' |
   'contents-static-black'
 

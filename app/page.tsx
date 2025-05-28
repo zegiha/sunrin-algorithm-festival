@@ -1,13 +1,13 @@
 import Col from "@/components/atom/flex/ui/Col";
-// import {Header} from '@/components/organism/Header'
 import {GuideSection, HeroSection} from '@/page/home'
+import ProgressWaySection from "@/page/home/progressWaySection/ui/ProgressWaySection";
 
 export default function Home() {
   return (
     <Col width={'fill'}>
-      {/*<Header/>*/}
       <HeroSection/>
       <GuideSection/>
+      <ProgressWaySection/>
     </Col>
   );
 }

@@ -2,20 +2,32 @@
   position: fixed;
   top: 0;
   left: 0;
+	z-index: 10;
 
   background-color: transparent;
 
-  padding: var(--spacing-24);
+  padding: var(--spacing-24) var(--spacing-24) 0 var(--spacing-24);
   @media (max-width: 640px) {
     padding: var(--spacing-12) var(--spacing-16) 0 var(--spacing-12);
   }
 }
 
 .wrapper {
+	position: initial;
   max-width: 1100px;
   padding: var(--spacing-12) var(--spacing-24);
+	background-color: transparent;
   border-radius: var(--radius-10);
+	transition: all 0.24s ease-in-out;
   @media (max-width: 640px) {
     padding: var(--spacing-12) var(--spacing-16);
   }
+}
+
+.onBackground {background-color: var(--common-100);}
+
+.translucentButtonContainer {
+	padding: var(--spacing-8);
+	background-color: transparent;
+	border-radius: var(--radius-8);
 }

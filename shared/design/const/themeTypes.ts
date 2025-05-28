@@ -17,7 +17,7 @@ interface IFill extends IDefaultAndAlternative{
 }
 
 interface IContents extends IDefaultAndAlternative{
-  disabled: string
+  disable: string
   static: {
     white: string
     black: string

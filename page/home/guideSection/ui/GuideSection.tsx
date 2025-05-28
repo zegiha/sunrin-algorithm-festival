@@ -27,7 +27,11 @@ export default function GuideSection() {
             color={'grey'}
             contents={'대회 안내'}
           />
-          <Typo.headline weight={'semibold'} textAlign={'center'} wordBreak={'keep-all'}>
+          <Typo.headline
+            weight={'semibold'}
+            textAlign={'center'}
+            wordBreak={'keep-all'}
+          >
             천하제일코딩대회는 올해로 9회째를 맞이하는,{'\n'}
             선린인터넷고등학교의 대표 알고리즘 페스티벌입니다.
           </Typo.headline>

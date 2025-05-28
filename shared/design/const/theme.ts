@@ -23,7 +23,7 @@ const theme: ITheme = {
   contents: {
     default: "var(--contents-default)",         // #18191A
     alternative: "var(--contents-alternative)", // #5D6066
-    disabled: "var(--contents-disable)",        // #9BA0A8
+    disable: "var(--contents-disable)",        // #9BA0A8
     static: {
       white: "var(--contents-static-white)",    // #FCFDFF
       black: "var(--contents-static-black)"     // #18191A

@@ -5,9 +5,10 @@ import {
   getLetterSpacing,
   getLineHeight
 } from '@/components/atom/typo/helper/getFontStyle'
-import {getTextColor} from '@/shared/design'
+import {textColor} from '@/shared/design'
 import {getWidth} from '@/shared/width'
 import {createElement} from "react";
+import classNames from "classnames";
 
 export default function BaseTypo({
   type,
@@ -24,16 +25,19 @@ export default function BaseTypo({
     type === 'Headline' ?
       'h3' : 'p',
     {
-      className,
+      className: classNames(
+        textColor[color],
+        className
+      ),
       style: {
         fontFamily: 'PretendardJP, PretendardJP Fallback, sans-serif',
         fontSize: getFontSize(type),
         lineHeight: getLineHeight(type, isParagraph),
         letterSpacing: getLetterSpacing(type, isParagraph),
         fontWeight: getFontWeight(weight),
-        color: getTextColor(color),
         width: getWidth(width),
         whiteSpace: 'pre-wrap',
+        transition: 'all 0.24s ease-in-out',
         wordBreak,
         textAlign,
       }

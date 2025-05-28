@@ -32,7 +32,7 @@
 }
 
 .moreInfoButton {
-  border-radius: var(--radius-4);
+  border-radius: var(--radius-8);
   position: absolute;
   bottom: 56px;
   left: 50%;

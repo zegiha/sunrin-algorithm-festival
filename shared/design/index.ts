@@ -11,10 +11,12 @@ import {
 import getTextColor from "@/shared/design/helper/getTextColor";
 import TTextColor from "@/shared/design/const/TTextColor";
 
+import textColor from '@/shared/design/ui/textColor.module.css'
+
 export {
   theme,
-
   getTextColor,
+  textColor,
 }
 
 export type {

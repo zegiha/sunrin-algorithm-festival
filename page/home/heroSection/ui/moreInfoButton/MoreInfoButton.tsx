@@ -15,6 +15,7 @@ export default function MoreInfo() {
         style.moreInfoButton
       )}
       style={{position: 'absolute'}}
+      onClick={() => {window.scrollTo({top: window.innerHeight, behavior: 'smooth'})}}
     >
       <Row gap={8} alignItems={'center'}>
         <Icon

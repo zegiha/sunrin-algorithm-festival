@@ -6,7 +6,7 @@ export default function getTextColor(v: TTextColor) {
     case'brand-default': return theme.brand.default
     case'contents-default': return theme.contents.default
     case'contents-alternative': return theme.contents.alternative
-    case'contents-disabled': return theme.contents.disabled
+    case'contents-disable': return theme.contents.disable
     case'contents-static-white': return theme.contents.static.white
     case'contents-static-black': return theme.contents.static.black
   }
