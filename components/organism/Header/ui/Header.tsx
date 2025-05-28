@@ -1,21 +1,20 @@
 'use client'
 
-import {Row} from '@/components/atom/flex'
+import {Col, Row} from '@/components/atom/flex'
 import style from './style.module.css'
 import Logo from '../../../../public/assets/logo.svg'
-import {ReactNode, useEffect, useState} from "react";
-import {Typo} from "@/components/atom/typo";
+import {useEffect, useState} from "react";
 import classNames from "classnames";
-import {interaction} from "@/shared/interaction";
-
-const navList = [
-  {contents: '대회 안내'},
-  {contents: '참가 신청'},
-  {contents: 'FAQ'},
-]
+import {AnimatePresence} from "framer-motion";
+import DesktopNavigations from "@/components/organism/Header/ui/navigation/DesktopNavigations";
+import OthersNavigations from "@/components/organism/Header/ui/navigation/OthersNavigations";
+import TextButtonContents from "@/components/organism/Header/ui/button/TextButtonContents";
+import TranslucentButton from "@/components/organism/Header/ui/button/TranslucentButton";
+import navigations from "@/components/organism/Header/const/navigations";
 
 export default function Header() {
   const [isHeroSection, setIsHeroSection] = useState<boolean>(true)
+  const [isOpen, setIsOpen] = useState<boolean>(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,7 +22,6 @@ export default function Header() {
       const scrolled = window.scrollY;
       setIsHeroSection(!(scrolled > viewportHeight-64))
     }
-
 
     handleScroll()
     window.addEventListener('scroll', handleScroll)
@@ -34,67 +32,81 @@ export default function Header() {
   }, []);
 
   return (
-    <Row className={style.container} justifyContent={'center'}>
-      <Row
+    <Col
+      className={classNames(
+        style.container,
+        isOpen && style.onBackground,
+      )}
+    >
+      <Col
         className={classNames(
           style.wrapper,
           !isHeroSection && style.onBackground
         )}
-        justifyContent={'space-between'}
-        alignItems={'center'}
       >
-        <Logo/>
-        <Row width={'hug'} gap={24}>
-          {navList.map((v, i) => (
-            <TranslucentButton
-              key={i}
-              onClick={() => {}}
-            >
-              <TextButtonContents
-                contents={v.contents}
-                isHeroSection={isHeroSection}
-              />
-            </TranslucentButton>
-          ))}
+        <Row
+          justifyContent={'space-between'}
+          alignItems={'center'}
+        >
+          <Logo/>
+          <DesktopNavigations isHeroSection={isHeroSection}/>
+          <OthersNavigations setIsOpen={setIsOpen}/>
         </Row>
-      </Row>
-    </Row>
+        <Modal isOpen={isOpen}/>
+      </Col>
+    </Col>
   )
 }
 
-function TextButtonContents({
-  contents,
-  isHeroSection
+function Modal({
+  isOpen,
 }: {
-  contents: string
-  isHeroSection?: boolean
+  isOpen: boolean
 }) {
-  return (
-    <Typo.label
-      color={isHeroSection ? 'contents-alternative' : 'contents-static-white'}
-      weight={'regular'}
-    >
-      {contents}
-    </Typo.label>
-  )
-}
+  const variants = {
+    close: {
+      opacity: 0,
+      height: 0,
+      marginTop: 0,
+      marginBottom: 0,
+    },
+    open: {
+      opacity: 1,
+      height: 'auto',
+      marginTop: 16,
+      marginBottom: 16,
+    }
+  }
 
-function TranslucentButton({
-  children,
-  onClick,
-}: {
-  children: ReactNode
-  onClick: () => void
-}) {
   return (
-    <button
-      className={classNames(
-        style.translucentButtonContainer,
-        interaction.interaction
-      )}
-      onClick={onClick}
-    >
-      {children}
-    </button>
+    <>
+      <AnimatePresence>
+        {isOpen && (
+          <Col
+            className={style.modalContainer}
+            motion={{
+              variants,
+              initial: 'close',
+              animate: 'open',
+              exit: 'close'
+            }}
+          >
+            {navigations.map((v, i) => (
+              <TranslucentButton
+                key={i}
+                onClick={() => {}}
+              >
+                <TextButtonContents contents={v.contents}/>
+              </TranslucentButton>
+            ))}
+          </Col>
+        )}
+      </AnimatePresence>
+      <AnimatePresence>
+        {isOpen && (
+          <div className={style.modalBackground}/>
+        )}
+      </AnimatePresence>
+    </>
   )
 }

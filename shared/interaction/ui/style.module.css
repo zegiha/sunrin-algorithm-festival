@@ -1,9 +1,9 @@
-.interaction {
+.interaction, .interactionWithoutActive {
 	position: relative;
 	cursor: pointer;
 }
 
-.interaction:before {
+.interaction:before, .interactionWithoutActive:before {
 	position: absolute;
 	inset: 0;
 	border-radius: inherit;
@@ -11,7 +11,7 @@
 	content: "";
 }
 
-.interaction:hover:before {
+.interaction:hover:before, .interactionWithoutActive:hover:before {
 	background-color: var(--state-hover);
 }
 

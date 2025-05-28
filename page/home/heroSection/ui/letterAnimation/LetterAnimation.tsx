@@ -10,12 +10,19 @@ import style from '../style.module.css'
 
 export default function LetterAnimation() {
   return (
-    <Row className={style.letterAnimationGroup} width={'hug'} gap={20}>
-      <Chun/>
-      <Ha/>
-      <Jae/>
-      <Il/>
-      <SubText/>
+    <Row justifyContent={'center'}>
+      <Row
+
+        className={style.letterAnimationGroup}
+        width={'hug'}
+        gap={20}
+      >
+        <Chun/>
+        <Ha/>
+        <Jae/>
+        <Il/>
+        <SubText/>
+      </Row>
     </Row>
   )
 }

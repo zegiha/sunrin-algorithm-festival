@@ -36,11 +36,11 @@ export default function BaseButton({
       />}
       {label && (
         size === 'large' ? (
-          <Typo.body color={getTextColor(type)}>
+          <Typo.body color={getTextColor(type)} textAlign={'center'}>
             {label}
           </Typo.body>
         ):(
-          <Typo.label color={getTextColor(type)}>
+          <Typo.label color={getTextColor(type)} textAlign={'center'}>
             {label}
           </Typo.label>
         )

@@ -1,0 +1,12 @@
+.container {
+	padding: var(--spacing-48) var(--spacing-24);
+	@media(max-width: 440px) {padding: var(--spacing-48) var(--spacing-16);}
+	background-color: var(--background-base-default);
+}
+
+.wrapper {
+	max-width: 1100px;
+	@media(max-width: 720px) {
+		flex-direction: column;
+	}
+}

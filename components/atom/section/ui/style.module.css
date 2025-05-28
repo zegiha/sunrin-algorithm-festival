@@ -6,7 +6,7 @@
 }
 
 .wrapper {
-  max-width: 1100px;
+  max-width: 1148px;
   padding: 0 var(--spacing-24);
   @media (max-width: 440px) {
     padding: 0 var(--spacing-16);

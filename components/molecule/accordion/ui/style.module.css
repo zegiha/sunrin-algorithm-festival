@@ -1,0 +1,10 @@
+.summary {padding: var(--spacing-16);}
+.detail {padding: 0 var(--spacing-16);}
+
+.container {
+	box-sizing: content-box;
+	background-color: var(--fill-alternative);
+	border-radius: var(--radius-10);
+	overflow: hidden;
+	cursor: pointer;
+}

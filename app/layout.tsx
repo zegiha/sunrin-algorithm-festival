@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
 import {Header} from "@/components/organism/Header";
+import {Footer} from "@/components/organism/footer";
 
 const PretendardJP = localFont({
   src: '../public/font/PretendardJPVariable.woff2',
@@ -21,8 +22,9 @@ export default function RootLayout({
   return (
     <html lang="ko" className={'light'}>
       <body className={`${PretendardJP.className} ${PretendardJP.className}`}>
-      <Header/>
+        <Header/>
         {children}
+        <Footer/>
       </body>
     </html>
   );
