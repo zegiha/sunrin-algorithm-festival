@@ -4,18 +4,21 @@ import {Section} from '@/components/atom/section'
 import {Typo} from '@/components/atom/typo'
 import Image from 'next/image'
 import style from './style.module.css'
-import img1 from '@/public/images/3thBackground.webp'
-import Text1 from '../../../../public/images/3thText.svg'
-import img2 from '@/public/images/8thBackground.webp'
-import Text2 from '../../../../public/images/8thText.svg'
-import img3 from '@/public/images/7thBackground.webp'
-import Text3 from '../../../../public/images/7thText.svg'
+import img1 from '@/public/images/pastCompatition/1stBackground.webp'
+import Text1 from '../../../../public/images/pastCompatition/1stText.svg'
+import img2 from '@/public/images/pastCompatition/3rdBackground.webp'
+import Text2 from '../../../../public/images/pastCompatition/3rdText.svg'
+import img3 from '@/public/images/pastCompatition/7thBackground.webp'
+import Text3 from '../../../../public/images/pastCompatition/7thText.svg'
+import img4 from '@/public/images/pastCompatition/8thBackground.webp'
+import Text4 from '../../../../public/images/pastCompatition/8thText.svg'
 import cn from 'classnames'
 
 const images = [
   {image: img1, label: Text1},
   {image: img2, label: Text2},
-  {image: img3, label: Text3}
+  {image: img3, label: Text3},
+  {image: img4, label: Text4},
 ]
 
 export default function GuideSection() {
