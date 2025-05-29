@@ -29,31 +29,4 @@
   }
 }
 
-.desktopNavigationContainer {
-	display: flex;
-	width: fit-content;
-	gap: 24px;
-	@media (max-width: 720px) {  display: none;  }
-}
-
-.othersNavigationContainer {
-	display: none;
-	@media (max-width: 720px) {  display: flex;  }
-}
-
 .onBackground {background-color: var(--common-100);}
-
-.translucentButtonContainer {
-	padding: var(--spacing-8);
-	background-color: transparent;
-	border-radius: var(--radius-8);
-}
-
-.modalContainer {overflow: hidden}
-
-.modalBackground {
-	position: fixed;
-	inset: 0;
-	backdrop-filter: blur(8px);
-	z-index: 9;
-}

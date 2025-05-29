@@ -2,7 +2,7 @@
 
 import {Icon} from "@/components/atom/icon";
 import TranslucentButton from "@/components/organism/Header/ui/button/TranslucentButton";
-import style from '../style.module.css'
+import style from './style.module.css'
 import React from 'react'
 
 export default function OthersNavigations({

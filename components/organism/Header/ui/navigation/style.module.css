@@ -1,0 +1,11 @@
+.desktopNavigationContainer {
+  display: flex;
+  width: fit-content;
+  gap: 24px;
+  @media (max-width: 720px) {  display: none;  }
+}
+
+.othersNavigationContainer {
+  display: none;
+  @media (max-width: 720px) {  display: flex;  }
+}

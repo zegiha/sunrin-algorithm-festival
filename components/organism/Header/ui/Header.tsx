@@ -1,17 +1,15 @@
 'use client'
 
 import {Col, Row} from '@/components/atom/flex'
-import {createPortal} from 'react-dom'
+import Modal from '@/components/organism/Header/ui/modal/Modal'
+import ModalBackground from '@/components/organism/Header/ui/modal/ModalBackground'
 import style from './style.module.css'
 import Logo from '../../../../public/assets/logo.svg'
 import {useEffect, useState} from "react";
 import classNames from "classnames";
-import {AnimatePresence} from "motion/react";
 import DesktopNavigations from "@/components/organism/Header/ui/navigation/DesktopNavigations";
 import OthersNavigations from "@/components/organism/Header/ui/navigation/OthersNavigations";
-import TextButtonContents from "@/components/organism/Header/ui/button/TextButtonContents";
 import TranslucentButton from "@/components/organism/Header/ui/button/TranslucentButton";
-import navigations from "@/components/organism/Header/const/navigations";
 import React from 'react'
 
 export default function Header() {
@@ -67,89 +65,8 @@ export default function Header() {
           <OthersNavigations isOpen={isOpen} setIsOpen={setIsOpen}/>
         </Row>
         <Modal isOpen={isOpen} setIsOpen={setIsOpen}/>
-        <ModalBackground isOpen={isOpen}/>
+        <ModalBackground isOpen={isOpen} setIsOpen={setIsOpen}/>
       </Col>
     </Col>
   )
-}
-
-function Modal({
-  isOpen,
-  setIsOpen,
-}: {
-  isOpen: boolean
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
-}) {
-  const variants = {
-    close: {
-      opacity: 0,
-      height: 0,
-      marginTop: 0,
-      marginBottom: 0,
-    },
-    open: {
-      opacity: 1,
-      height: 'auto',
-      marginTop: 16,
-      marginBottom: 16,
-    }
-  }
-
-  return (
-      <AnimatePresence>
-        {isOpen && (
-          <Col
-            className={style.modalContainer}
-            motion={{
-              variants,
-              initial: 'close',
-              animate: 'open',
-              exit: 'close'
-            }}
-          >
-            {navigations.map((v, i) => (
-              <TranslucentButton
-                key={i}
-                onClick={() => {
-                  const targetScroll = document.getElementById(v.targetId)?.offsetTop ?? window.scrollY
-                  const getTiming = (length: number) => {
-                    if(length <= 300) return 300
-                    if(length <= 1000) return 500
-                    return 750
-                  }
-                  window.scrollTo({top: targetScroll, behavior: 'smooth'})
-                  setTimeout(
-                    () => {setIsOpen(false)},
-                    getTiming(Math.abs(window.scrollY - targetScroll))
-                  )
-                }}
-              >
-                <TextButtonContents contents={v.contents}/>
-              </TranslucentButton>
-            ))}
-          </Col>
-        )}
-      </AnimatePresence>
-  )
-}
-
-function ModalBackground({
-  isOpen
-}: {
-  isOpen: boolean
-}) {
-  return isOpen ? createPortal(
-    <Row
-      className={style.modalBackground}
-      motion={{
-        initial: {backgroundColor: 'rgba(24, 25, 26, 0)'},
-        animate: {backgroundColor: 'rgba(24, 25, 26, 0.6)'},
-        transition: {
-          duration: 0.24,
-          ease: 'easeInOut'
-        }
-      }}
-    />,
-    document.getElementById('modalBackground') as HTMLElement
-  ):<></>
 }
