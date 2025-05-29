@@ -1,13 +1,13 @@
 import {ReactNode} from "react";
 import classNames from "classnames";
-import style from "@/components/organism/Header/ui/style.module.css";
+import style from "./style.module.css";
 import {interaction} from "@/shared/interaction";
 
 export default function TranslucentButton({
   children,
   onClick,
 }: {
-children: ReactNode
+  children: ReactNode
   onClick: () => void
 }) {
   return (
@@ -16,7 +16,10 @@ children: ReactNode
         style.translucentButtonContainer,
         interaction.interaction
       )}
-      onClick={onClick}
+      onClick={e => {
+        e.stopPropagation()
+        onClick()
+      }}
     >
       {children}
     </button>
