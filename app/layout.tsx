@@ -3,6 +3,7 @@ import "./globals.css";
 import localFont from "next/font/local";
 import {Header} from "@/components/organism/Header";
 import {Footer} from "@/components/organism/footer";
+import React from 'react'
 
 const PretendardJP = localFont({
   src: '../public/font/PretendardJPVariable.woff2',
@@ -25,6 +26,7 @@ export default function RootLayout({
         <Header/>
         {children}
         <Footer/>
+        <div id={'modalBackground'}/>
       </body>
     </html>
   );

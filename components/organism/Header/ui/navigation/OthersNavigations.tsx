@@ -1,25 +1,41 @@
-import {SetStateAction} from "react";
-import style from "@/components/organism/Header/ui/style.module.css";
+'use client'
+
 import {Icon} from "@/components/atom/icon";
 import TranslucentButton from "@/components/organism/Header/ui/button/TranslucentButton";
+import style from '../style.module.css'
+import React from 'react'
 
 export default function OthersNavigations({
+  isOpen,
   setIsOpen
 }: {
-  setIsOpen: React.Dispatch<SetStateAction<boolean>>
+  isOpen: boolean
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 }) {
   return (
     <>
       <div className={style.othersNavigationContainer}>
-        <TranslucentButton onClick={() => {
-          setIsOpen(p => !p)
-        }}>
-          <Icon
-            iconKey={'menu'}
-            size={24}
-            color={'contents-static-white'}
-          />
-        </TranslucentButton>
+        {isOpen ? (
+          <TranslucentButton onClick={() => {
+            setIsOpen(p => !p)
+          }}>
+            <Icon
+              iconKey={'close'}
+              size={24}
+              color={'contents-static-white'}
+            />
+          </TranslucentButton>
+        ):(
+          <TranslucentButton onClick={() => {
+            setIsOpen(p => !p)
+          }}>
+            <Icon
+              iconKey={'menu'}
+              size={24}
+              color={'contents-static-white'}
+            />
+          </TranslucentButton>
+        )}
       </div>
     </>
   )

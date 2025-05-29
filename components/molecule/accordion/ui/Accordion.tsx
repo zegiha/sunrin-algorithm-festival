@@ -3,7 +3,7 @@
 import {Col, Row} from "@/components/atom/flex";
 import {Typo} from "@/components/atom/typo";
 import {Icon} from "@/components/atom/icon";
-import {AnimatePresence} from "framer-motion";
+import {AnimatePresence} from "motion/react";
 import style from './style.module.css'
 import {useState} from "react";
 import classNames from "classnames";

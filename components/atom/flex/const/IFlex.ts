@@ -9,6 +9,7 @@ export default interface IFlex {
   gap?: number
 
   ref?: Ref<HTMLDivElement>
+  id?: string
   children?: ReactNode
 
   className?: string

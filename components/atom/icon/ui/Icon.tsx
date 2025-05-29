@@ -1,7 +1,7 @@
 import IIcon from "@/components/atom/icon/const/IIcon";
+import MotionedIcon from '@/components/atom/icon/ui/MotionedIcon'
 import {getTextColor} from "@/shared/design";
 import {CSSProperties} from 'react'
-import {motion} from 'framer-motion'
 
 export default function Icon({
   iconKey,
@@ -28,11 +28,5 @@ export default function Icon({
       {iconKey}
     </div>
   else
-    return <motion.div
-      className={'material-symbols-rounded'}
-      style={style}
-      {...motionProps}
-    >
-      {iconKey}
-    </motion.div>
+    return <MotionedIcon {...{iconKey, style, motionProps}}/>
 }

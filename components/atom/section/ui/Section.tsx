@@ -4,14 +4,17 @@ import style from './style.module.css'
 import cn from 'classnames'
 
 function box({
+  id,
   backgroundColor='default',
   children,
 }: {
+  id?: string
   backgroundColor?: 'default' | 'alternative'
   children?: ReactNode
 }) {
   return (
     <Col
+      id={id}
       className={cn(
         style.container,
         style[backgroundColor]
