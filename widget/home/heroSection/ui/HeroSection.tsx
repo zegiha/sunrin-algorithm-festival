@@ -9,7 +9,7 @@ import style from './style.module.css'
 
 export default function() {
   const [isLoaded, setIsLoaded] = useState<boolean>(false)
-  const imgUrl = '/images/heroImage.png'
+  const imgUrl = '/images/heroImage.webp'
 
   useEffect(() => {
     const img = new Image()
