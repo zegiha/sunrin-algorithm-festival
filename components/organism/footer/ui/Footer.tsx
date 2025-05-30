@@ -20,7 +20,7 @@ export default function Footer() {
           <Col gap={8}>
             <Typo.body>천코대 운영진</Typo.body>
             <Typo.label weight={'regular'} color={'contents-alternative'} wordBreak={'keep-all'}>
-              한지연 선생님, 김현호, 박찬규, 유채호, 이서율, 이정훈, 이주영
+              한지연 선생님, 김현호, 박찬규, 유채호, 이서율, 이정훈, 이주영, 류현규
             </Typo.label>
           </Col>
           <Col gap={8}>
