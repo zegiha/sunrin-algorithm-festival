@@ -111,7 +111,7 @@ button {
 	--radius-circle: 999px;
 }
 
-html.light {
+html.light, html.dark {
 	--brand-default: var(--red-100);
 	--brand-translucent: var(--red-20);
 
@@ -134,25 +134,25 @@ html.light {
 	--line-alternative: var(--neutral-20);
 }
 
-html.dark {
-	--brand-default: var(--red-100);
-	--brand-translucent: var(--red-20);
+/*html.dark {*/
+/*	--brand-default: var(--red-100);*/
+/*	--brand-translucent: var(--red-20);*/
 
-	--background-base-default: var(--neutral-95);
-	--background-base-alternative: var(--neutral-100);
-	--background-elevated-default: var(--neutral-95);
-	--background-elevated-alternative: var(--neutral-90);
+/*	--background-base-default: var(--neutral-95);*/
+/*	--background-base-alternative: var(--neutral-100);*/
+/*	--background-elevated-default: var(--neutral-95);*/
+/*	--background-elevated-alternative: var(--neutral-90);*/
 
-	--fill-default: var(--grey-6);
-	--fill-alternative: var(--grey-13);
-	--fill-interaction: var(--common-4);
+/*	--fill-default: var(--grey-6);*/
+/*	--fill-alternative: var(--grey-13);*/
+/*	--fill-interaction: var(--common-4);*/
 
-	--contents-default: var(--neutral-00);
-	--contents-alternative: var(--neutral-60);
-	--contents-disable: var(--neutral-70);
-	--contents-static-white: var(--neutral-00);
-	--contents-static-black: var(--neutral-100);
+/*	--contents-default: var(--neutral-00);*/
+/*	--contents-alternative: var(--neutral-60);*/
+/*	--contents-disable: var(--neutral-70);*/
+/*	--contents-static-white: var(--neutral-00);*/
+/*	--contents-static-black: var(--neutral-100);*/
 
-	--line-default: var(--neutral-80);
-	--line-alternative: var(--neutral-90);
-}
+/*	--line-default: var(--neutral-80);*/
+/*	--line-alternative: var(--neutral-90);*/
+/*}*/
