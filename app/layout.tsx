@@ -12,7 +12,14 @@ const PretendardJP = localFont({
 
 export const metadata: Metadata = {
   title: "천하제일 코딩대회",
-  description: "천하제일 코딩대회(알고리즘 페스티벌) 홍보 웹사이트",
+  description: "천하제일 코딩대회(알고리즘 페스티벌) 홍보 공식 웹사이트",
+  openGraph: {
+    title: '천하제일 코딩대회',
+    description: '천하제일 코딩대회(알고리즘 페스티벌) 공식 홍보 웹사이트',
+    type: 'website',
+    url: 'https://algorithms.kr/',
+    images: '/images/meta.webp',
+  }
 };
 
 export default function RootLayout({
@@ -23,9 +30,13 @@ export default function RootLayout({
   return (
     <html lang="ko" className={'light'}>
       <body className={`${PretendardJP.className} ${PretendardJP.className}`}>
-        <Header/>
+        <header>
+          <Header/>
+        </header>
         {children}
-        <Footer/>
+        <footer>
+          <Footer/>
+        </footer>
         <div id={'modalBackground'}/>
       </body>
     </html>
